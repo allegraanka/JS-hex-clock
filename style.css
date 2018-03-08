@@ -1,0 +1,12 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  font-family: 'Raleway', serif;
+}
+
+div {
+  font-family: 'Montserrat', serif;
+  font-size: 6em;
+}
