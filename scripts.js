@@ -1,31 +1,31 @@
 
 let digitalClock = document.getElementById('clock');
+var photos = ['images/morning.jpg', 'images/afternoon.jpg', 'images/evening.jpeg']
+var greeting = document.getElementById('greeting');
+var currentDate, currentHour, currentMinutes, currentSeconds;
 
 function updateTime() {
-  let currentDate = new Date();
-  let currentHour = '0' + currentDate.getHours() %12;
-  let currentMinutes = currentDate.getMinutes();
-  let currentSeconds = currentDate.getSeconds();
+  currentDate = new Date();
+  currentHour = '0' + currentDate.getHours() %12;
+  currentMinutes = currentDate.getMinutes();
+  currentSeconds = currentDate.getSeconds();
   let theTime = currentHour.toString() + ':' + currentMinutes.toString() + ':' + currentSeconds.toString();
   digitalClock.innerHTML = theTime;
+  greeting.innerText = updateGreeting();
 }
 
 setInterval(updateTime,1000);
 
-var greeting = document.getElementById('greeting');
-
 function updateGreeting() {
   if (currentHour < 12) {
-    greeting = 'Good morning!'
+    return 'Good morning!'
   } else if (currentHour > 12) {
-    greeting = 'Good afternoon!'
+    return 'Good afternoon!'
   } else {
-    greeting = 'Good evening!'
+    return 'Good evening!'
   }
 }
-document.write(greeting);
 
-var photos = ['morning.jpg', 'afternoon.jpg', 'evening.jpeg']
 function updatePhoto() {
   if (currentHour < 12) {
     return photos[0];
