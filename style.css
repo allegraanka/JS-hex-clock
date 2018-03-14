@@ -3,23 +3,29 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 95%;
+  align-content: center;
+  padding-top: 12%;
+  padding-bottom: 5%;
   background-image: url(images/morning.jpg);
   background-image: url(images/afternoon.jpg);
   background-image: url(images/evening.jpeg);
+  background-repeat: no-repeat;
 }
 
 .clock-style {
   font-family: 'Montserrat', serif;
-  font-size: 12em;
+  font-size: 14em;
   padding: 2%;
 }
 
 .greeting-style {
   font-family: 'Raleway', serif;
   font-size: 6em;
+  padding: 2%;
 }
 
 .photos {
-
+  width: 95%;
+  height: 95%;
+  overflow: inherit;
 }
