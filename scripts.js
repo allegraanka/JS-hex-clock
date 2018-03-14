@@ -11,21 +11,22 @@ var show = function(img) {
   img.style.display = 'block';
 }
 
+function civTime() {
+  if (currentHour < 10) {
+    return '0' + currentHour;
+  } else if (currentHour => 13) {
+    return currentHour - 12;
+  } else {
+    return currentHour;
+  }
+}
+
 function updateTime() {
   currentDate = new Date();
   currentHour = currentDate.getHours();
   currentMinutes = currentDate.getMinutes();
   currentSeconds = currentDate.getSeconds();
-  let theTime = currentHour.toString() + ':' + currentMinutes.toString().padStart(2, 00) + ':' + currentSeconds.toString().padStart(2, 00);
-    /*function civTime(theTime) {
-      if (currentHour < 10) {
-        return '0' + (currentHour - 12) + currentMinutes + currentSeconds;
-      } else if (currentHour <= 11) {
-        return '0' + (currentHour - 12) + currentMinutes + currentSeconds;
-      } else {
-        return currentHour;
-      }
-    }*/
+  let theTime = civTime().toString() + ':' + currentMinutes.toString().padStart(2, 00) + ':' + currentSeconds.toString().padStart(2, 00);
   digitalClock.innerText = theTime;
   greeting.innerText = updateGreeting();
 }
