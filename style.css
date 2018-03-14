@@ -4,28 +4,30 @@ body {
   justify-content: center;
   align-items: center;
   align-content: center;
-  padding-top: 12%;
-  padding-bottom: 5%;
-  background-image: url(images/morning.jpg);
-  background-image: url(images/afternoon.jpg);
-  background-image: url(images/evening.jpeg);
-  background-repeat: no-repeat;
+  padding-top: 10%;
+  padding-bottom: auto;
 }
 
 .clock-style {
   font-family: 'Montserrat', serif;
   font-size: 14em;
   padding: 2%;
+  z-index: 5;
 }
 
 .greeting-style {
   font-family: 'Raleway', serif;
   font-size: 6em;
   padding: 2%;
+  z-index: 5;
 }
 
 .photos {
-  width: 95%;
-  height: 95%;
-  overflow: inherit;
+  position: absolute;
+  top: auto;
+  bottom: auto;
+  width: 75%;
+  height: 75%;
+  overflow: hidden;
+  z-index: 2;
 }

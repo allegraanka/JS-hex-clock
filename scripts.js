@@ -12,9 +12,7 @@ var show = function(img) {
 }
 
 function civTime() {
-  if (currentHour < 10) {
-    return '0' + currentHour;
-  } else if (currentHour => 13) {
+  if (currentHour >= 13) {
     return currentHour - 12;
   } else {
     return currentHour;
@@ -26,7 +24,7 @@ function updateTime() {
   currentHour = currentDate.getHours();
   currentMinutes = currentDate.getMinutes();
   currentSeconds = currentDate.getSeconds();
-  let theTime = civTime().toString() + ':' + currentMinutes.toString().padStart(2, 00) + ':' + currentSeconds.toString().padStart(2, 00);
+  let theTime = civTime().toString().padStart(2, 00) + ':' + currentMinutes.toString().padStart(2, 00) + ':' + currentSeconds.toString().padStart(2, 00);
   digitalClock.innerText = theTime;
   greeting.innerText = updateGreeting();
 }
@@ -52,11 +50,11 @@ function updatePhoto() {
   currentMinutes = currentDate.getMinutes();
   currentSeconds = currentDate.getSeconds();
   if (currentHour < 12) {
-    //show(mornImg);
+    show(mornImg);
   } else if (currentHour > 12 && currentHour <= 17) {
-    //show(noonImg);
+    show(noonImg);
   } else {
-    //show(eveImg);
+    show(eveImg);
   }
 }
 
