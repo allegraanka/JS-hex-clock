@@ -1,12 +1,25 @@
 body {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 95%;
-  font-family: 'Raleway', serif;
+  background-image: url(images/morning.jpg);
+  background-image: url(images/afternoon.jpg);
+  background-image: url(images/evening.jpeg);
 }
 
-div {
+.clock-style {
   font-family: 'Montserrat', serif;
+  font-size: 12em;
+  padding: 2%;
+}
+
+.greeting-style {
+  font-family: 'Raleway', serif;
   font-size: 6em;
+}
+
+.photos {
+
 }
